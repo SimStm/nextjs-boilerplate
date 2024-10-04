@@ -1,0 +1,20 @@
+name: Test and lint pull request
+
+on: [pull_request]
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          always-auth: true
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install --force
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Lint
+        run: npm run lint

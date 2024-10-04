@@ -1,0 +1,13 @@
+.title {
+  /* font-family: Greycliff CF, var(--mantine-font-family); */
+  font-weight: 600;
+  font-size: rem(22px);
+}
+
+.root {
+  background-color: #f8f8f8;
+}
+
+.loginBox {
+  width: rem(400px);
+}
